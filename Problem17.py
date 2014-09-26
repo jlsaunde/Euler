@@ -4,3 +4,14 @@
 
 
 #NOTE: Do not count spaces or hyphens. For example, 342 (three hundred and forty-two) contains 23 letters and 115 (one hundred and fifteen) contains 20 letters. The use of "and" when writing out numbers is in compliance with British usage.
+from num2words import num2words
+
+def count_letters(num):
+    sum = 0
+    for n in range(1, num+1):
+        sum += len(str(num2words(n)).replace(' ', '').replace('-', ''))
+        print(n)
+
+    print(sum)
+
+count_letters(1000)
